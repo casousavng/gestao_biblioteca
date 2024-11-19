@@ -1,0 +1,75 @@
+/* Reset básico */
+body {
+    background-image: url('../../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Altura mínima da tela */
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Branco com 50% de opacidade */
+    z-index: -1;
+}
+
+
+/* Container principal */
+.container {
+    max-width: 600px; /* Limita a largura */
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Lista de navegação */
+ul {
+    list-style-type: none; /* Remove os marcadores */
+    padding: 0;
+    margin: 0;
+}
+
+/* Links como botões */
+li {
+    margin: 15px 0; /* Espaçamento entre os links */
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #007BFF; /* Cor principal */
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: inline-block; /* Faz com que o link pareça um botão */
+    transition: background-color 0.3s ease; /* Animação de hover */
+}
+
+a:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+
