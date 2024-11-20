@@ -16,8 +16,9 @@
         <li><a href="atualizar_utilizador.php">Atualizar </a></li>
     </ul>
     <ul>
-        <li style="margin-top: 40px;"></li>
-        <li><a href="../../../index.php">Voltar ao Início</a></li>
+    <li style="margin-top: 40px;"></li>
+        <li><a href="../../menu.php">Voltar à Página Inicial</a></li>
+        <li><a href="../../index.php">SAIR</a></li>
     </ul>
 </div>
 </body>

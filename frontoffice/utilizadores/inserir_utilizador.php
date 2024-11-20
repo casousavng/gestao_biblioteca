@@ -48,7 +48,7 @@ require_once '../../backoffice/controllers/gerir_utilizador_controller.php';
     <br>
     <button onclick="window.location.href='utilizadores.php'">Voltar à Gestão de Utilizadores</button>    
     <br><br>
-    <button onclick="window.location.href='../../../index.php'">Voltar à Página Inicial</button>
+    <button onclick="window.location.href='../../logout.php'">SAIR</button>
 
         <!-- Exibe a mensagem -->
     <?php if (!empty($mensagem)): ?>

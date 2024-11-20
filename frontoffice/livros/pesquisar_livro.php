@@ -1,5 +1,15 @@
 <?php
 require_once '../../backoffice/controllers/pesquisar_livro_controller.php';
+session_start();
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../../login.php?mensagem=" . urlencode("Por favor, faça login para continuar."));
+    exit;
+}
+
+// Determina o tipo de utilizador
+$user_type = strtolower($_SESSION['user_type']); // Assumindo que 'user_type' foi configurado durante o login
 ?>
 
 <!DOCTYPE html>
@@ -50,22 +60,23 @@ require_once '../../backoffice/controllers/pesquisar_livro_controller.php';
                 <option value="Disponivel">Disponível</option>
                 <option value="Emprestado">Emprestado</option>
                 <option value="Reservado">Reservado</option>
-                <option value="Danificado">Danificado</option>
+                <?php if ($user_type == 'bibliotecario'): ?>
+                    <option value="Danificado">Danificado</option>
+                <?php endif; ?>
             </select><br>
 
             <button type="submit">Pesquisar</button>
         </form>
 
         <br>
-        <button onclick="window.location.href='livros.php'">Voltar à Gestão de Livros</button>    
-        <br><br>
-        <button onclick="window.location.href='../../index.php'">Voltar à Página Inicial</button>
+    <button onclick="window.location.href='livros.php'">Voltar à Página Anterior</button>    
+    <br><br>
+    <button onclick="window.location.href='../../logout.php'">SAIR</button>
 
-    <!-- Exibe a mensagem -->
-    <?php if (!empty($mensagem)): ?>
-        <p style="color: green;"><?php echo htmlspecialchars($mensagem, ENT_QUOTES, 'UTF-8'); ?></p>
-    <?php endif; ?>
-
+        <!-- Exibe a mensagem -->
+        <?php if (!empty($mensagem)): ?>
+            <p style="color: green;"><?php echo htmlspecialchars($mensagem, ENT_QUOTES, 'UTF-8'); ?></p>
+        <?php endif; ?>
     </div> <!-- Fecha container -->
 
     <?php if (!empty($resultados)): ?>

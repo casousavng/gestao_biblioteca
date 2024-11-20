@@ -61,9 +61,9 @@ require_once '../../backoffice/controllers/inserir_livro_controller.php';
     </form>
 
     <br>
-    <button onclick="window.location.href='livros.php'">Voltar à Gestão de Livros</button>    
+    <button onclick="window.location.href='livros.php'">Voltar à Página Anterior</button>    
     <br><br>
-    <button onclick="window.location.href='../../index.php'">Voltar à Página Inicial</button>
+    <button onclick="window.location.href='../../logout.php'">SAIR</button>
 
 
         <!-- Exibe a mensagem -->

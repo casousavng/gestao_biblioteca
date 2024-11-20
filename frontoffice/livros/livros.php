@@ -16,9 +16,9 @@
     </ul>
     <ul>
         <li style="margin-top: 40px;"></li>
-        <li><a href="../../index.php">Voltar ao Início</a></li>
+        <li><a href="../../menu_bibliotecario.php">Voltar à Página Inicial</a></li>
+        <li><a href="../../index.php">SAIR</a></li>
     </ul>
 </div>
 </body>
 </html>
-
