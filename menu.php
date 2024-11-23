@@ -9,7 +9,14 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Obtém o tipo de utilizador da sessão
-$user_type = strtolower($_SESSION['user_type']); // Assumindo que 'user_type' foi configurado durante o login
+$user_type = $_SESSION['user_type'] ?? null;
+
+if ($user_type !== null) {
+    // Converte o tipo de usuário para UTF-8 caso necessário
+    $user_type = mb_convert_encoding($user_type, 'UTF-8', 'auto');
+    $user_type = mb_strtolower($user_type, 'UTF-8'); // Compatível com acentos
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,19 +31,22 @@ $user_type = strtolower($_SESSION['user_type']); // Assumindo que 'user_type' fo
 <body>
 <div class="container">
     <h1>Bem-vindo à Biblioteca</h1>
-    <p>Olá, <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Utilizador'); ?>! Você está logado como <strong><?php echo htmlspecialchars($user_type); ?></strong>.</p>
+    <p>Olá, <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Utilizador'); ?>! Você entrou como <strong><?php echo htmlspecialchars($user_type); ?></strong>.</p>
     
     <nav>
         <ul>
-            <li><a href="frontoffice/livros/livros.php">Gestão de Livros</a></li>
-            <?php if ($user_type == 'bibliotecario'): ?>
+            <?php if ($user_type == 'leitor'): ?>
+                <li><a href="frontoffice/livros/pesquisar_livro.php">Pesquisa de Livros</a></li>
+            <?php endif; ?>
+            <?php if ($user_type != 'leitor'): ?>
+                <li><a href="frontoffice/livros/livros.php">Gestão de Livros</a></li>
                 <li><a href="frontoffice/utilizadores/utilizadores.php">Gestão de Utilizadores</a></li>
             <?php endif; ?>
         </ul>
     </nav>
     
     <footer>
-        <a href="../../logout.php">Sair</a>
+        <a href="logout.php">Sair</a>
     </footer>
 </div>
 </body>

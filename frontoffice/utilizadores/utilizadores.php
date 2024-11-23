@@ -18,7 +18,7 @@
     <ul>
     <li style="margin-top: 40px;"></li>
         <li><a href="../../menu.php">Voltar à Página Inicial</a></li>
-        <li><a href="../../index.php">SAIR</a></li>
+        <li><a href="../../logout.php">SAIR</a></li>
     </ul>
 </div>
 </body>

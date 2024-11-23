@@ -119,3 +119,12 @@ tr:hover {
     overflow-x: auto; /* Permite rolagem horizontal caso a tabela exceda a largura */
     box-sizing: border-box;
 }
+
+        /* Estilo para aumentar o tamanho do campo "Estado" */
+select[name="estado"], select[name^="estado_"] {
+    width: 175px;
+}
+        /* Estilo para aumentar o campo "Cópias" */
+select[name^="copias_"] {
+    width: 25px;
+}

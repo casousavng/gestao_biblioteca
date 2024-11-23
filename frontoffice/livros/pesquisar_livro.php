@@ -4,7 +4,7 @@ session_start();
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../../login.php?mensagem=" . urlencode("Por favor, faça login para continuar."));
+    header("Location: ../../index.php?mensagem=" . urlencode("Por favor, faça login para continuar."));
     exit;
 }
 
