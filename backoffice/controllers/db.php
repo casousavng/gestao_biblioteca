@@ -3,17 +3,8 @@
 $host = 'localhost';
 $port = '1521';
 $sid = 'xe';
-
-if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-    $username = 'c##biblioteca';
-    $password = 'senha123';
-} else {
-    $username = 'system';
-    $password = 'admin';
-}
-
-//$username = 'c##biblioteca';
-//$password = 'senha123';
+$username = 'c##biblioteca';
+$password = 'senha123';
 
 $dsn = "oci:dbname=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=$host)(PORT=$port))(CONNECT_DATA=(SID=$sid)))";
 
