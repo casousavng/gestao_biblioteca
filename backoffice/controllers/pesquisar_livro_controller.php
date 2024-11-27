@@ -18,11 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $isbn = $_POST['isbn'] ?? null;
     $genero = $_POST['genero'] ?? null;
     $estado = $_POST['estado'] ?? null;
+    $ordenarPor = $_POST['ordenarPor'] ?? null; // Nova variável para a ordenação
 
     // Inicializa a consulta SQL base
     $sql = "SELECT \"ID_LIVRO\", \"TITULO\", \"AUTOR\", \"EDITORA\", \"ANOPUBLICACAO\", \"ISBN\", \"NUMEROCOPIAS\", \"GENERO\", \"ESTADO\" 
             FROM \"LIVRO\" 
-            WHERE 1=1"; // A condição "1=1" garante que sempre seja válida e facilita a construção dinâmica da query
+            WHERE 1=1";
 
     // Adiciona condições dinamicamente com base nos campos preenchidos
     if (!empty($titulo)) {
@@ -45,6 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     if (!empty($estado)) {
         $sql .= " AND LOWER(\"ESTADO\") = LOWER(:estado)";
+    }
+
+    // Adiciona a cláusula ORDER BY com base no valor de ordenarPor
+    if (!empty($ordenarPor)) {
+        if ($ordenarPor === 'titulo') {
+            $sql .= " ORDER BY \"TITULO\" ASC";
+        } elseif ($ordenarPor === 'anoPublicacao') {
+            $sql .= " ORDER BY \"ANOPUBLICACAO\" ASC";
+        }
     }
 
     // Prepara e executa a consulta

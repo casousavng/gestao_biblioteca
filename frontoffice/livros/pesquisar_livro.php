@@ -65,6 +65,14 @@ $user_type = strtolower($_SESSION['user_type']); // Assumindo que 'user_type' fo
                 <?php endif; ?>
             </select><br>
 
+            <label for="ordenarPor">Ordenar por:</label>
+            <select id="ordenarPor" name="ordenarPor">
+                <option value="">Selecione</option>
+                <option value="titulo">Título (Ordem Alfabética)</option>
+                <option value="anoPublicacao">Ano de Publicação</option>
+            </select>
+<br>
+
             <button type="submit">Pesquisar</button>
         </form>
 

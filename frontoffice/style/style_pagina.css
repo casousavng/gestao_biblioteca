@@ -126,5 +126,10 @@ select[name="estado"], select[name^="estado_"] {
 }
         /* Estilo para aumentar o campo "Cópias" */
 select[name^="copias_"] {
-    width: 25px;
+    width: 50px;
+}
+
+        /* Estilo para aumentar o tamanho do campo "ordenarPor" */
+select[name="ordenarPor"], select[name^="ordenarPor_"] {
+    width: 175px;
 }

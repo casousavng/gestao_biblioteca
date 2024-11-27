@@ -39,6 +39,8 @@ if ($user_type !== null) {
             <li><a href="inserir_livro.php">Inserir Livros</a></li>
             <li><a href="editar_livro.php">Editar Livros</a></li>
             <li><a href="pesquisar_livro.php">Pesquisar Livro</a></li>
+            <li><a href="emprestimo_livro.php">Emprestar Livros</a></li>
+            <li><a href="gerir_emprestimo.php">Gerir Emprestimo</a></li>
         <?php endif; ?>
     </ul>
     <ul>
