@@ -68,14 +68,15 @@ require_once '../../backoffice/controllers/gerir_emprestimo_controller.php';
                                 <td><?= htmlspecialchars($emprestimo['ESTADO']); ?></td>
                                 <td>
                                     <!-- Formulário para alterar o estado -->
-                                    <form method="POST" action="gerir_.php">
+                                    <form method="post" action="" style="display:inline;">
+                                    <input type="hidden" name="acao" value="alterar_estado">
                                         <input type="hidden" name="idEmprestimo" value="<?= htmlspecialchars($emprestimo['ID_EMPRESTIMO']); ?>">
                                         <select name="novoEstado">
                                             <option value="Devolvido" <?= $emprestimo['ESTADO'] == 'Devolvido' ? 'selected' : ''; ?>>Devolvido</option>
                                             <option value="Atrasado" <?= $emprestimo['ESTADO'] == 'Atrasado' ? 'selected' : ''; ?>>Atrasado</option>
                                             <option value="Ativo" <?= $emprestimo['ESTADO'] == 'Ativo' ? 'selected' : ''; ?>>Ativo</option>
                                         </select>
-                                        <button type="submit" name="acao" value="alterar_estado">Alterar Estado</button>
+                                        <button type="submit">Alterar Estado</button>
                                     </form>
                                 </td>
                             </tr>

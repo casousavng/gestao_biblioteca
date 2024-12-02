@@ -37,10 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['acao']) && $_POST['aca
     $estado = $_POST['estado'] ?? null;
 
     $sql = "SELECT e.\"ID_EMPRESTIMO\", l.\"TITULO\", u.\"NOME\", e.\"DATAEMPRESTIMO\", e.\"ESTADO\"
-            FROM \"EMPRESTIMO\" e
-            JOIN \"LIVRO\" l ON e.\"ID_LIVRO\" = l.\"ID_LIVRO\"
-            JOIN \"UTILIZADOR\" u ON e.\"ID_UTILIZADOR\" = u.\"ID_UTILIZADOR\"
-            WHERE e.\"ESTADO\" = 'Ativo'"; // Filtro inicial para empréstimos ativos
+        FROM \"EMPRESTIMO\" e
+        JOIN \"LIVRO\" l ON e.\"ID_LIVRO\" = l.\"ID_LIVRO\"
+        JOIN \"UTILIZADOR\" u ON e.\"ID_UTILIZADOR\" = u.\"ID_UTILIZADOR\"
+        WHERE 1=1"; // Filtro inicial sempre verdadeiro
 
     if (!empty($idLivro)) {
         $sql .= " AND l.\"ID_LIVRO\" = :idLivro";

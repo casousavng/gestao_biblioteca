@@ -16,8 +16,9 @@ require_once '../../backoffice/controllers/gerir_utilizador_controller.php';
     <h1>Atualizar Utilizador</h1>
     <form method="post" action="">
         <input type="hidden" name="acao" value="atualizar">
+
         <label for="id_utilizador">ID do Utilizador:</label>
-        <input type="number" id="id_utilizador" name="id_utilizador"><br>
+        <input type="number" id="id_utilizador" name="id_utilizador" min="0" required><br>
 
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome"><br>
@@ -26,7 +27,7 @@ require_once '../../backoffice/controllers/gerir_utilizador_controller.php';
         <select id="tipo" name="tipo" required>
             <option value="">Selecione</option>
             <option value="Leitor">Leitor</option>
-            <option value="Bibliotecario">Bibliotecario</option>
+            <option value="Bibliotecário">Bibliotecário</option>
         </select><br>
 
         <label for="contacto">Contacto:</label>

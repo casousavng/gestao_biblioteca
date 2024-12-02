@@ -133,3 +133,5 @@ select[name^="copias_"] {
 select[name="ordenarPor"], select[name^="ordenarPor_"] {
     width: 175px;
 }
+
+

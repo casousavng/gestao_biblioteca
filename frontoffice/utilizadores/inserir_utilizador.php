@@ -23,7 +23,7 @@ require_once '../../backoffice/controllers/gerir_utilizador_controller.php';
         <select id="tipo" name="tipo" required>
             <option value="">Selecione</option>
             <option value="Leitor">Leitor</option>
-            <option value="Bibliotecario">Bibliotecario</option>
+            <option value="Bibliotecario">Bibliotecário</option>
         </select><br>
 
         <label for="contacto">Contacto:</label>
